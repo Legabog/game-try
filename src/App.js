@@ -1,14 +1,17 @@
 import React, { Suspense } from "react";
 import { Canvas } from "react-three-fiber";
-import { OrbitControls} from "@react-three/drei";
+import { OrbitControls, Sky } from "@react-three/drei";
 import "./App.css";
-import Scene from "./containers/ScenePlane/ScenePlane";
+import Ground from "./components/Ground/Ground";
 
-function App() {
+function App(props) {
   return (
-    <Canvas style={{ background: "aqua" }}>
+    <Canvas>
+      <Sky sunPosition={[100, 20, 100]} />
+      <ambientLight intensity={0.5} />
+      <pointLight castShadow intensity={0.7} position={[100, 100, 100]} />
       <Suspense fallback={null}>
-        <Scene />
+        <Ground />
       </Suspense>
       <axesHelper attach={"helper"} />
       <OrbitControls />
