@@ -9,7 +9,7 @@ function App(props) {
     <Canvas args={[400, 400]}>
       <Stars />
       <ambientLight intensity={0.5} />
-      <pointLight castShadow intensity={0.7} position={[100, 100, 100]} />
+      <pointLight castShadow intensity={1.5} position={[300, 500, 0]} />
       <Suspense fallback={null}>
         <Ground />
       </Suspense>
